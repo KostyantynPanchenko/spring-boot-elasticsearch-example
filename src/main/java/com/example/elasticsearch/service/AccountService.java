@@ -1,5 +1,6 @@
 package com.example.elasticsearch.service;
 
+import com.example.elasticsearch.exception.AccountNotFoundException;
 import com.example.elasticsearch.model.Account;
 import com.example.elasticsearch.repository.declarative.AccountRepository;
 import java.util.ArrayList;
@@ -19,5 +20,9 @@ public class AccountService {
     final var list = new ArrayList<Account>();
     repository.findAll().forEach(list::add);
     return list;
+  }
+
+  public Account getByAccountNumber(final Long accNo) {
+    return repository.findAccountByAccountNumber(accNo).orElseThrow(() -> new AccountNotFoundException(accNo));
   }
 }
