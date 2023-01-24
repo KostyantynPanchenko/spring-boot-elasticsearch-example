@@ -25,4 +25,11 @@ public class AccountService {
   public Account getByAccountNumber(final Long accNo) {
     return repository.findAccountByAccountNumber(accNo).orElseThrow(() -> new AccountNotFoundException(accNo));
   }
+
+  public Account getByLastName(final String lastName) {
+    if (lastName == null) {
+      return new Account();
+    }
+    return repository.findByLastName(lastName).orElseThrow(() -> new AccountNotFoundException(lastName));
+  }
 }
