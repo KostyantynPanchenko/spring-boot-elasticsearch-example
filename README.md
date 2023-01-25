@@ -156,3 +156,7 @@ xpack.security.enabled: false
 xpack.security.http.ssl.enabled: false
 xpack.security.transport.ssl.enabled: false
 ```
+
+### Video
+
+[Spring Data Elasticsearch Playlist](https://www.youtube.com/watch?v=IiZZAu2Qtp0&list=PLXy8DQl3058OoJqGLFdqoBkBKm2T0kS9B&index=1)
